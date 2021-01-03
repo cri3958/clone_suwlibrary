@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">clone_library</string>
+
+    <string name="main_title">USW 중앙도서관</string>
+    <string name="serach_hint">검색어를 입력하세요.</string>
+
+    <string name="main_icon_1">대출/연장/\n예약조회</string>
+    <string name="main_icon_2">학술DB</string>
+    <string name="main_icon_3">동영상\n강의</string>
+    <string name="main_icon_4">전자책</string>
+    <string name="main_icon_5">스터디룸\n예약</string>
+    <string name="main_icon_6">희망도서\n신청</string>
+    <string name="main_icon_7">추천도서\n(개인맞춤)</string>
+    <string name="main_icon_8">FAQ</string>
+    <string name="main_icon_9">연체료</string>
+
+    <string name="main_notice_title">공지사항</string>
+    <string name="main_notice_more">더보기</string>
+
+    <string name="main_underbar_info">이용안내</string>
+    <string name="main_underbar_notice">개인공지</string>
+    <string name="main_underbar_idcard">모바일이용증</string>
+
+</resources>
