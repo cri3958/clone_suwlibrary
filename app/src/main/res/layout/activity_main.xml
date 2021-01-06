@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,33 +8,33 @@
     tools:context=".MainActivity">
 
     <LinearLayout
+        android:id="@+id/main_titleview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/uswblue"
         android:orientation="vertical"
-        android:id="@+id/main_titleview"
-        app:layout_constraintTop_toTopOf="parent"
-        android:background="@color/uswblue">
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
 
             <ImageView
-                android:id="@+id/btn_person"
+                android:id="@+id/main_btn_login"
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:layout_gravity="center"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/lock" />
+                app:srcCompat="@drawable/icon_main_lock" />
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:layout_gravity="center"
-                app:srcCompat="@drawable/suw_logo" />
+                android:layout_weight="1"
+                app:srcCompat="@drawable/icon_app_suwlogo" />
 
             <TextView
                 android:id="@+id/textView"
@@ -44,9 +43,9 @@
                 android:layout_weight="1"
                 android:gravity="start|center"
                 android:text="@string/main_title"
-                android:textStyle="bold"
+                android:textColor="@color/white"
                 android:textSize="20dp"
-                android:textColor="@color/white"/>
+                android:textStyle="bold" />
 
             <ImageView
                 android:id="@+id/imageView3"
@@ -59,21 +58,21 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:background="@color/white"
             android:layout_margin="10dp"
+            android:background="@color/white"
+            android:orientation="horizontal"
             android:paddingBottom="3dp">
 
             <TextView
                 android:id="@+id/editTextTextPersonName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="10"
+                android:layout_gravity="start|bottom"
                 android:layout_marginStart="5dp"
+                android:layout_weight="10"
                 android:ems="10"
                 android:hint="@string/serach_hint"
-                android:textSize="15dp"
-                android:layout_gravity="start|bottom"/>
+                android:textSize="15dp" />
 
             <ImageView
                 android:id="@+id/imageView4"
@@ -88,11 +87,11 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:orientation="vertical"
+        android:overScrollMode="never"
+        android:scrollbars="none"
         app:layout_constraintBottom_toTopOf="@id/main_paddingbar"
         app:layout_constraintTop_toBottomOf="@id/main_titleview"
-        tools:layout_editor_absoluteX="5dp"
-        android:overScrollMode="never"
-        android:scrollbars="none">
+        tools:layout_editor_absoluteX="5dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -103,9 +102,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
+                android:layout_marginTop="2dp"
                 android:layout_marginEnd="15dp"
                 android:layout_marginBottom="10dp"
-                android:layout_marginTop="2dp"
                 android:orientation="horizontal">
 
                 <TableRow
@@ -124,7 +123,7 @@
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:layout_gravity="center"
-                            app:srcCompat="@drawable/icon1" />
+                            app:srcCompat="@drawable/icon_main_1" />
 
                         <TextView
                             android:layout_width="match_parent"
@@ -146,7 +145,7 @@
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:layout_gravity="center"
-                            app:srcCompat="@drawable/icon2" />
+                            app:srcCompat="@drawable/icon_main_2" />
 
                         <TextView
                             android:layout_width="match_parent"
@@ -168,7 +167,7 @@
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:layout_gravity="center"
-                            app:srcCompat="@drawable/icon3" />
+                            app:srcCompat="@drawable/icon_main_3" />
 
                         <TextView
                             android:layout_width="match_parent"
@@ -196,7 +195,7 @@
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:layout_gravity="center"
-                            app:srcCompat="@drawable/icon4" />
+                            app:srcCompat="@drawable/icon_main_4" />
 
                         <TextView
                             android:layout_width="match_parent"
@@ -218,7 +217,7 @@
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:layout_gravity="center"
-                            app:srcCompat="@drawable/icon5" />
+                            app:srcCompat="@drawable/icon_main_5" />
 
                         <TextView
                             android:layout_width="match_parent"
@@ -240,7 +239,7 @@
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:layout_gravity="center"
-                            app:srcCompat="@drawable/icon6" />
+                            app:srcCompat="@drawable/icon_main_6" />
 
                         <TextView
                             android:layout_width="match_parent"
@@ -268,7 +267,7 @@
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:layout_gravity="center"
-                            app:srcCompat="@drawable/icon7" />
+                            app:srcCompat="@drawable/icon_main_7" />
 
                         <TextView
                             android:layout_width="match_parent"
@@ -290,7 +289,7 @@
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:layout_gravity="center"
-                            app:srcCompat="@drawable/icon8" />
+                            app:srcCompat="@drawable/icon_main_8" />
 
                         <TextView
                             android:layout_width="match_parent"
@@ -312,7 +311,7 @@
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:layout_gravity="center"
-                            app:srcCompat="@drawable/icon9" />
+                            app:srcCompat="@drawable/icon_main_9" />
 
                         <TextView
                             android:layout_width="match_parent"
@@ -354,9 +353,9 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/main_notice_underbar"
                 android:layout_marginStart="5dp"
-                android:layout_marginEnd="5dp"></TextView>
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/main_notice_underbar"></TextView>
 
 
             <TextView
@@ -397,6 +396,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="2020-12-21 09:07:44"></TextView>
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -409,6 +409,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="2020-12-21 09:07:44"></TextView>
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -427,74 +428,75 @@
     </ScrollView>
 
 
-
     <LinearLayout
         android:id="@+id/main_paddingbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/uswblue"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:background="@color/uswblue">
+        app:layout_constraintBottom_toBottomOf="parent">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:orientation="vertical">
 
             <ImageView
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_gravity="center"
                 android:layout_margin="5dp"
-                app:srcCompat="@drawable/info" />
+                app:srcCompat="@drawable/icon_main_info" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:text="@string/main_underbar_info"
-                android:textColor="@color/white"
-                android:gravity="center"/>
+                android:textColor="@color/white" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:orientation="vertical">
 
             <ImageView
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_gravity="center"
                 android:layout_margin="5dp"
-                app:srcCompat="@drawable/personalnotice" />
+                app:srcCompat="@drawable/icon_main_personalnotice" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:text="@string/main_underbar_notice"
-                android:textColor="@color/white"
-                android:gravity="center"/>
+                android:textColor="@color/white" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:orientation="vertical">
 
             <ImageView
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_gravity="center"
                 android:layout_margin="5dp"
-                app:srcCompat="@drawable/idcard" />
+                app:srcCompat="@drawable/icon_main_idcard" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:text="@string/main_underbar_idcard"
-                android:textColor="@color/white"
-                android:gravity="center"/>
+                android:textColor="@color/white" />
         </LinearLayout>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
