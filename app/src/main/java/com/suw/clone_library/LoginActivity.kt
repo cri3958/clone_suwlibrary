@@ -1,13 +1,22 @@
 package com.suw.clone_library
 
+import android.Manifest
+
 import android.content.Context
+import android.content.DialogInterface
 import android.content.Intent
+import android.content.pm.PackageManager
+import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
+
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
 import kotlinx.android.synthetic.main.activity_login.*
 import java.io.File
 import java.io.FileInputStream
@@ -79,6 +88,16 @@ class LoginActivity : AppCompatActivity() {
             }
         }
 
+        login_btn_here.setOnClickListener {
+            val intent:Intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://lib.suwon.ac.kr/#/reset-password2"))
+            startActivity(intent)
+        }
+
+        login_btn_number.setOnClickListener {
+            val intent: Intent = Intent(Intent.ACTION_VIEW, Uri.parse("tel:"+getString(R.string.login_number)))
+            startActivity(intent)
+        }
+
         val file = File("/data/data/com.suw.clone_library/files/"+fileName)
         if(file.exists()){
             val inFs:FileInputStream = openFileInput(fileName)
@@ -89,6 +108,7 @@ class LoginActivity : AppCompatActivity() {
             login_edittext_pw.setText(fdata[1])
         }
     }
+
     fun gohome(){
         val intent = Intent(this,MainActivity::class.java)
         startActivity(intent)

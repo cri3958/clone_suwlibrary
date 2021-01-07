@@ -30,4 +30,6 @@
     <string name="login_login">로그인</string>
     <string name="login_autologin">자동로그인</string>
     <string name="login_text1">알림은 로그인 후 설정하실 수 있습니다.</string>
+    <string name="login_here">여기</string>
+    <string name="login_number">031-220-2393</string>
 </resources>

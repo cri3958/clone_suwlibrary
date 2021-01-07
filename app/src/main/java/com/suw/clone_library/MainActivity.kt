@@ -1,5 +1,6 @@
 package com.suw.clone_library
 
+import android.Manifest
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -12,5 +13,6 @@ class MainActivity : AppCompatActivity() {
 
         val intent = Intent(this,LoginActivity::class.java)
         main_btn_login.setOnClickListener { startActivity(intent) }
+
     }
 }
