@@ -21,6 +21,18 @@
     <string name="main_underbar_notice">개인공지</string>
     <string name="main_underbar_idcard">모바일이용증</string>
 
+    <string name="main_navigationview_text1">대출현황</string>
+    <string name="main_navigationview_text2">예약현황</string>
+    <string name="main_navigationview_text3">선예약현황</string>
+    <string name="main_navigationview_text4">연체현황</string>
+    <string name="main_navigationview_text5">연체료</string>
+    <string name="main_navigationview_text6">개인공지사항</string>
+    <string name="main_navigationview_text7">부재도서신고현황</string>
+    <string name="main_navigationview_text8">제재현황</string>
+    <string name="main_navigationview_text9">희망도서신청</string>
+    <string name="main_navigationview_text10">로그아웃</string>
+    <string name="main_navigationview_toast">로그아웃되었습니다.</string>
+
 
     <string name="login_title">LOGIN</string>
     <string name="login_id">아이디</string>
