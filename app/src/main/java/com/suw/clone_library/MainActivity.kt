@@ -3,20 +3,22 @@ package com.suw.clone_library
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.MenuItem
+import android.view.MotionEvent
 import android.view.View
 import android.widget.Toast
-import androidx.core.view.GravityCompat
-import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.navigation_main_layout.*
 import java.io.File
 
-class MainActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelectedListener {
+class MainActivity : AppCompatActivity(){
     val fileName:String = "data_autologin.txt"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        main_navigation_left.setWidth1(changeDP(1))
+        main_navigation_left.setVisibility(View.INVISIBLE)
+        var isleftnavopen = false
+
 
         val file = File("/data/data/com.suw.clone_library/files/"+fileName)
         if(file.exists()){
@@ -27,35 +29,47 @@ class MainActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelected
         main_btn_login.setOnClickListener { startActivity(Intent(this,LoginActivity::class.java)) }
 
         main_btn_dashboard.setOnClickListener{
-            mainlayout.openDrawer(GravityCompat.START)
-        }
-        main_navigationview.setNavigationItemSelectedListener(this)
-
-    }
-
-    override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        when(item.itemId){
-            R.id.nav_item_1 -> Toast.makeText(applicationContext,R.string.main_navigationview_text1,Toast.LENGTH_SHORT).show()
-            R.id.nav_item_2 -> Toast.makeText(applicationContext,R.string.main_navigationview_text2,Toast.LENGTH_SHORT).show()
-            R.id.nav_item_3 -> Toast.makeText(applicationContext,R.string.main_navigationview_text3,Toast.LENGTH_SHORT).show()
-            R.id.nav_item_4 -> Toast.makeText(applicationContext,R.string.main_navigationview_text4,Toast.LENGTH_SHORT).show()
-            R.id.nav_item_5 -> Toast.makeText(applicationContext,R.string.main_navigationview_text5,Toast.LENGTH_SHORT).show()
-            R.id.nav_item_6 -> Toast.makeText(applicationContext,R.string.main_navigationview_text6,Toast.LENGTH_SHORT).show()
-            R.id.nav_item_7 -> Toast.makeText(applicationContext,R.string.main_navigationview_text7,Toast.LENGTH_SHORT).show()
-            R.id.nav_item_8 -> Toast.makeText(applicationContext,R.string.main_navigationview_text8,Toast.LENGTH_SHORT).show()
-            R.id.nav_item_9 -> Toast.makeText(applicationContext,R.string.main_navigationview_text9,Toast.LENGTH_SHORT).show()
-            R.id.nav_item_10 -> {
-                val file = File("/data/data/com.suw.clone_library/files/"+fileName)
-                file.delete()
-                finishAffinity()
-                val intent:Intent = Intent(this,MainActivity::class.java)
-                startActivity(intent)
-                Toast.makeText(applicationContext,R.string.main_navigationview_toast,Toast.LENGTH_SHORT).show()
+            if(isleftnavopen){
+                main_navigation_left.setWidth1(changeDP(1))
+                main_navigation_left.setVisibility(View.INVISIBLE)
+                isleftnavopen = false
+            }else{
+                main_navigation_left.setWidth1(changeDP(240))
+                main_navigation_left.setVisibility(View.VISIBLE)
+                isleftnavopen = true
             }
         }
-        mainlayout.closeDrawers()
-        return false
-    }
+        scrollview.setOnTouchListener { _: View, event: MotionEvent ->true}
 
+        nav_item_1.setOnClickListener { Toast.makeText(applicationContext,R.string.main_navigationview_text1,Toast.LENGTH_SHORT).show() }
+        nav_item_2.setOnClickListener { Toast.makeText(applicationContext,R.string.main_navigationview_text2,Toast.LENGTH_SHORT).show() }
+        nav_item_3.setOnClickListener { Toast.makeText(applicationContext,R.string.main_navigationview_text3,Toast.LENGTH_SHORT).show() }
+        nav_item_4.setOnClickListener { Toast.makeText(applicationContext,R.string.main_navigationview_text4,Toast.LENGTH_SHORT).show() }
+        nav_item_5.setOnClickListener { Toast.makeText(applicationContext,R.string.main_navigationview_text5,Toast.LENGTH_SHORT).show() }
+        nav_item_6.setOnClickListener { Toast.makeText(applicationContext,R.string.main_navigationview_text6,Toast.LENGTH_SHORT).show() }
+        nav_item_7.setOnClickListener { Toast.makeText(applicationContext,R.string.main_navigationview_text7,Toast.LENGTH_SHORT).show() }
+        nav_item_8.setOnClickListener { Toast.makeText(applicationContext,R.string.main_navigationview_text8,Toast.LENGTH_SHORT).show() }
+        nav_item_9.setOnClickListener { Toast.makeText(applicationContext,R.string.main_navigationview_text9,Toast.LENGTH_SHORT).show() }
+        nav_item_10.setOnClickListener {
+            val file = File("/data/data/com.suw.clone_library/files/"+fileName)
+            file.delete()
+            finishAffinity()
+            val intent:Intent = Intent(this,MainActivity::class.java)
+            startActivity(intent)
+            Toast.makeText(applicationContext,R.string.main_navigationview_toast,Toast.LENGTH_SHORT).show()
+        }
+    }
+    private fun changeDP(value : Int) : Int{
+        var displayMetrics = resources.displayMetrics
+        var dp = Math.round(value * displayMetrics.density)
+        return dp
+    }
+    fun View.setWidth1(value: Int) {
+        val lp = layoutParams
+        lp?.let {
+            lp.width = value
+            layoutParams = lp
+        }
+    }
 
 }
